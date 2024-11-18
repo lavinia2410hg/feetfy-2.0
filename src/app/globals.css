@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  height: 100;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.curved-bottom {
+  clip-path: ellipse(100% 70% at 50% 100%);
+}
+
+.curved-bottom-footer {
+  position: relative;
+  background-color: black;
+  clip-path: ellipse(83% 60% at 50% 100%);
+  /* Remove o estilo de borda aqui */
+}
+
+/* Pseudo-elemento para borda preta */
+.curved-bottom-footer::before {
+  content: '';
+  position: absolute;
+  top: -1px; /* Ajusta a posição da borda */
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background-color: whitesmoke;
+  clip-path: ellipse(80% 60% at 50% 100%);
+  z-index: -1; /* Coloca atrás do elemento */
+}
+
+.curved-top {
+  clip-path: ellipse(100% 90% at 50% 10%);
+}
