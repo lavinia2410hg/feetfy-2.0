@@ -180,7 +180,7 @@ export default function Form1() {
           <div className="w-full h-56 flex flex-col items-center bg-white">
             {
               loadedImages.map((src, index) => {
-                if (loadedImages.length <= 15) {
+                if (loadedImages.length < 15) {
                   return <Image
                     src={src}
                     alt={`Imagem ${index}`}
@@ -293,7 +293,7 @@ export default function Form1() {
                 <button className="h-14 bg-gray-500 rounded-md font-bold text-2xl w-full hover:bg-red2 hover:text-white transition delay-150 hover:scale-90"
                   onClick={() => {
                     verify.q1 && verify.q2 && verify.q3 && verify.q4 ?
-                      (setCount(count + 1), setVerify({ "q1": false, "q2": false, "q3": false, "q4": false }), router.push("form4")) : null
+                      (setCount(count + 1), setVerify({ "q1": false, "q2": false, "q3": false, "q4": false }), router.push("saque")) : null
 
                   }}
                   style={{

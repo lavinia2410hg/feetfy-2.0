@@ -180,7 +180,7 @@ export default function Form1() {
           <div className="w-full h-56 flex flex-col items-center bg-white">
             {
               loadedImages.map((src, index) => {
-                if (loadedImages.length <= 15) {
+                if (loadedImages.length < 15) {
                   return <Image
                     src={src}
                     alt={`Imagem ${index}`}

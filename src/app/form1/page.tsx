@@ -180,7 +180,7 @@ export default function Form1() {
               loadedImages.map((src, index) => {
                 console.log(loadedImages.length);
                 
-                if (loadedImages.length <= 15) {
+                if (loadedImages.length < 15) {
                   return <Image
                     src={src}
                     alt={`Imagem ${index}`}
